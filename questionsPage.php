@@ -18,9 +18,11 @@
     <main class="cont-general">
         <div class="register-slider">
             <img src="media/icons/scientist.png" alt="scienceOption" class="register-img">
+            <div class="cont-tl">
             <h2 class="title">Science</h2><br>
             <h3 class="count">Question:</h3>
             <h3 class="count">1 / 10</h3>
+            </div>
         </div>
         <div class="form-main">
             <h2 class="question">-What three parts are distinguished in the human body?</h2>
