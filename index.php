@@ -23,34 +23,54 @@
         <h1>ZH - QUIZZ</h1>
       </div>
       <div class="startForm">
-          <form action="" method="POST">
+          <form action="res.php" method="POST">
               <label>Choose your Theme:</label>
-              <select class="form-select" aria-label="Default select example">
-                <option selected disabled>Open this select menu</option>
-                <option value="Science">Science
-                  <img src="media/icons/scientist.png" alt="science">
-                </option>
-                <option value="Geography">Geography
-                  <img src="media/icons/geography.png" alt="geography">
-                </option>
-                <option value="Logic">Basic Logic
-                  <img src="media/icons/critical-thinking.png" alt="logic">
-                </option>
-                <option value="CSS">CSS (Web Dev.)
-                  <img src="media/icons/web-design.png" alt="css">
-                </option>
-                <option value="Javascript">Javascript (Web Dev.)
-                  <img src="media/icons/Javascript.png" alt="js">
-                </option>
-              </select>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle w-100 bg-white text-dark fs-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select your Option
+                </button>
+                <ul class="dropdown-menu">
+                  <li class="cont-option">
+                      <label class="dropdown-item-light" for="theme" >Science
+                        <img src="media/icons/scientist.png" alt="option" class="option-img">
+                      </label>
+                      <input type="radio" name="theme" id="theme" value="science">
+                  </li>
+                  <li class="cont-option">
+                      <label class="dropdown-item-light" for="geography" >Geography
+                        <img src="media/icons/geography.png" alt="option" class="option-img">
+                      </label>
+                      <input type="radio" name="theme" id="geography" value="Geography">
+                  </li>
+                  <li class="cont-option">
+                      <label class="dropdown-item-light" for="logic" >Basic Logic
+                        <img src="media/icons/critical-thinking.png" alt="option" class="option-img">
+                      </label>
+                      <input type="radio" name="theme" id="logic" value="logic">
+                  </li>
+                  <li class="cont-option">
+                      <label class="dropdown-item-light" for="css" >CSS (Web Dev.)
+                        <img src="media/icons/web-design.png" alt="option" class="option-img">
+                      </label>
+                      <input type="radio" name="theme" id="css" value="CSS">
+                  </li>
+                  <li class="cont-option">
+                      <label class="dropdown-item-light" for="js" >Javascript (Web Dev.)
+                        <img src="media/icons/Javascript.png" alt="option" class="option-img">
+                      </label>
+                      <input type="radio" name="theme" id="js" value="javascript">
+                  </li>
+                </ul>
+              </div>
                 <label>Number of Questions:</label><br>
                 <input type="number" name="number" id="number" class="number" min="0" max="10">
+                <?php include "includes/footer.php"; ?>
           </form>
           <img src="media/images/question_Home.svg" alt="question_Home" class="img-question">
       </div>
     </div>
     
-    <?php include "includes/footer.php"; ?>
+    
     <!-- BOOTSTRAP SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
