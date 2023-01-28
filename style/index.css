@@ -1,0 +1,102 @@
+@import url("https://fonts.cdnfonts.com/css/swanky-and-moo-moo");
+@import url("https://fonts.cdnfonts.com/css/syne");
+body {
+  background-color: #e8d2a6;
+  width: 100%;
+}
+.logo {
+  width: 100px;
+}
+.navbar {
+  background-color: #5b6d79;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.trasfondo {
+  margin-top: 8vh;
+  width: 100%;
+  background-image: url("../media/images/Vector 2.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 70vh;
+  margin-bottom: 60px;
+}
+.fondo {
+  padding-top: 25px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 15vh;
+}
+.fondo1 {
+  width: 300px;
+}
+h1 {
+  font-size: 150px;
+  font-family: "Swanky and Moo Moo", sans-serif;
+  color: white;
+  font-weight: 400;
+  line-height: 220px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.startForm {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+form {
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.startForm label {
+  font-family: "Syne", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 42px;
+}
+.form-select {
+  height: 40px;
+  margin: 10px 0px 40px 0px;
+  width: 100%;
+  font-size: 20px;
+  border: 1px solid black;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.number {
+  align-self: flex-end;
+  width: 70px;
+  height: 40px;
+  font-size: 25px;
+  padding-left: 15px;
+  border: 1px solid black;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.img-question {
+  width: 400px;
+}
+.button {
+  width: 98%;
+  text-align: end;
+}
+.btn {
+  background-color: #e96868;
+  border: 1px solid #d31e1e;
+  width: 200px;
+  color: white;
+  font-family: "Syne", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 42px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.btn:hover {
+  background-color: #d15b5b;
+  color: white;
+}
