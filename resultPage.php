@@ -25,7 +25,6 @@
     </main>
     <div class="result-table">
         <h2 class="text-thanks">Thank you for answering this Quiz.</h2>
-
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -34,34 +33,34 @@
                     </button>
                 </h2>
               <div id="collapseOne" class="accordion-collapse collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <table class="table table-striped">
-                          <thead>
-                            <tr>
-                              <th class="t-headerN" scope="col">N°</th>
-                              <th class="t-headerQ" scope="col">Questions</th>
-                              <th class="t-headerA" scope="col">Answers</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th class="t-campN" scope="row">1</th>
-                              <td class="t-campQ">What three parts are distinguished in the human body?</td>
-                              <td class="t-campA">Head, legs and arms</td>
-                            </tr>
-                            <tr>
-                              <th class="t-campN" scope="row">2</th>
-                              <td class="t-campQ">What are the vital functions of human beings?</td>
-                              <td class="t-campA">Reproduction, relationship and nutrition.</td>
-                            </tr>
-                            <tr>
-                              <th class="t-campN" scope="row">3</th>
-                              <td class="t-campQ">What is the name of the part of the body where two or more bones meet?</td>
-                              <td class="t-campA">To relate to the world around us.</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                    </div>
+                  <div class="accordion-body">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th class="t-headerN" scope="col">N°</th>
+                            <th class="t-headerQ" scope="col">Questions</th>
+                            <th class="t-headerA" scope="col">Answers</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th class="t-campN" scope="row">1</th>
+                            <td class="t-campQ">What three parts are distinguished in the human body?</td>
+                            <td class="t-campA">Head, legs and arms</td>
+                          </tr>
+                          <tr>
+                            <th class="t-campN" scope="row">2</th>
+                            <td class="t-campQ">What are the vital functions of human beings?</td>
+                            <td class="t-campA">Reproduction, relationship and nutrition.</td>
+                          </tr>
+                          <tr>
+                            <th class="t-campN" scope="row">3</th>
+                            <td class="t-campQ">What is the name of the part of the body where two or more bones meet?</td>
+                            <td class="t-campA">To relate to the world around us.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
               </div>
             </div>
         </div>
