@@ -5,5 +5,4 @@ function prettyPrint($value){
     print_r ($value);
     print "</pre>";
 }
-
 ?>

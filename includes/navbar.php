@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark p-0 fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="media/images/logo.png" alt="logo.png" class="logo">
+    <a class="navbar-brand" href="">
+       <img src="/media/images/logo.png" alt="logo.png" class="logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>

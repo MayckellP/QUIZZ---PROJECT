@@ -1,3 +1,10 @@
+<?php
+include "includes/db.php";
+session_start();
+//session_destroy();
+$_SESSION = array('score' => 0);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,7 +30,7 @@
         <h1>ZH - QUIZZ</h1>
       </div>
       <div class="startForm">
-          <form action="res.php" method="POST">
+          <form action="questionsPage.php" method="POST">
               <label>Choose your Theme:</label>
               <div class="dropdown">
                 <button class="btn dropdown-toggle w-100 bg-white text-dark fs-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,7 +47,7 @@
                       <label class="dropdown-item-light" for="geography" >Geography
                         <img src="media/icons/geography.png" alt="option" class="option-img">
                       </label>
-                      <input type="radio" name="theme" id="geography" value="Geography">
+                      <input type="radio" name="theme" id="geography" value="geography">
                   </li>
                   <li class="cont-option">
                       <label class="dropdown-item-light" for="logic" >Basic Logic
@@ -63,7 +70,9 @@
                 </ul>
               </div>
                 <label>Number of Questions:</label><br>
-                <input type="number" name="number" id="number" class="number" min="0" max="10">
+                <input type="number" name="limit" id="number" class="number" min="0" max="10">
+                <input type="hidden" name="indexPage" value= "1">
+                <input type="hidden" name="answer" value= "0">
                 <?php include "includes/footer.php"; ?>
           </form>
           <img src="media/images/question_Home.svg" alt="question_Home" class="img-question">

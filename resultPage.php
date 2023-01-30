@@ -1,3 +1,12 @@
+<?php
+include "includes/db.php";
+include "includes/tools.php";
+session_start();
+$_SESSION += $_POST;
+$correctAnswer = $question['correct']; 
+$score = $_POST['answer'];
+$_SESSION['score'] += $score;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +26,12 @@
     <main class="result-header">
         <div class="result-title">
             <h3>You have obtained a score of: </h3>
-            <h2>10 / 10</h2>
+            <?php
+            $sum = $_SESSION['score'] / $_SESSION['limit'];
+            $resTotal = $sum * 10;
+            $resTotal = round($resTotal, 2); 
+            echo "<h2> $resTotal / 10</h2>";
+            ?>
         </div>
         <div class="result-img">
         <img src="media/images/normal_Result.svg" alt="result">
@@ -43,21 +57,19 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th class="t-campN" scope="row">1</th>
-                            <td class="t-campQ">What three parts are distinguished in the human body?</td>
-                            <td class="t-campA">Head, legs and arms</td>
-                          </tr>
-                          <tr>
-                            <th class="t-campN" scope="row">2</th>
-                            <td class="t-campQ">What are the vital functions of human beings?</td>
-                            <td class="t-campA">Reproduction, relationship and nutrition.</td>
-                          </tr>
-                          <tr>
-                            <th class="t-campN" scope="row">3</th>
-                            <td class="t-campQ">What is the name of the part of the body where two or more bones meet?</td>
-                            <td class="t-campA">To relate to the world around us.</td>
-                          </tr>
+                          <?php
+                            for($i = 1; $i <= $_SESSION['limit']; $i++){
+                              showQuestion($i);
+                              $index = "chossed-".$i;
+                              echo
+                              "<tr>
+                                <th class='t-campN' scope='row'>".$i."</th>
+                                <td class='t-campQ'>".$question['question_text']."</td>
+                                <td class='t-campA'>".$question[$_SESSION[$index]]."</td>
+                              </tr>";
+
+                            }
+                          ?>
                         </tbody>
                       </table>
                   </div>

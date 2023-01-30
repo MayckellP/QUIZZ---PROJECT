@@ -1,3 +1,18 @@
+<?php
+include "includes/db.php";
+include "includes/tools.php";
+session_start();
+$_SESSION += $_POST;
+$indexPage = $_POST['indexPage'];
+showQuestion($indexPage);
+
+$correctAnswer = $question['correct']; 
+
+$score = $_POST['answer'];
+
+$_SESSION['score'] += $score;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,31 +34,56 @@
         <div class="register-slider">
             <img src="media/icons/scientist.png" alt="scienceOption" class="register-img">
             <div class="cont-tl">
-            <h2 class="title">Science</h2><br>
-            <h3 class="count">Question:</h3>
-            <h3 class="count">1 / 10</h3>
+                <h2 class="title">Science</h2><br>
+                <h3 class="count">Question:</h3>
+                <?php echo 
+                "<h3 class='count'>"
+                .$_POST['indexPage']." / ".$_SESSION['limit']. 
+                "</h3>";
+                ?>
             </div>
         </div>
-        <div class="form-main">
-            <h2 class="question">-What three parts are distinguished in the human body?</h2>
-            <form action="" method="POST">
-                <div class="option">
-                    <input type="radio" name="answer1" id="answer1" class="check-input">
-                    <label class="check-answer" for="answer1">Head, legs and arms.</label>
-                </div>
-                <div class="option">
-                    <input type="radio" name="answer1" id="answer2" class="check-input">
-                    <label class="check-answer" for="answer2">Body, legs and arms.</label>
-                </div>
-                <div class="option">
-                    <input type="radio" name="answer1" id="answer3" class="check-input">
-                    <label class="check-answer" for="answer3">Heads, trunk and extremities.</label>
-                </div>
+        <div class="form-main">   
+                <?php 
+                    echo "<h2 class='question'>-".$question['question_text']."</h2>";
+                    $page = "";
+                    if($_POST['indexPage'] < $_SESSION['limit']){
+                        $page = "questionsPage.php";
+                    } else{
+                        $page = "resultPage.php";
+                    }
+                    echo 
+                    "<form action=".$page." method='POST' onsubmit='return choosed();'>";
+                            $option = 0;
+                            for($i=1; $i <= 5; $i++){
+                                $answer = "answer-".$i;
+                                if(isset($question[$answer])){
+                                    if($correctAnswer === $answer){ 
+                                        $value = 1;
+                                        $option = $i;
+                                    }else{
+                                        $value = 0;
+                                    }
+                                    echo "<div class='option'>
+                                            <input type='radio' id=".$answer." class='check-input' name='answer' value=".$value.">
+                                            <label class='check-answer' for=".$answer.">
+                                                ".$question[$answer]."
+                                            </label>
+                                        </div>";
+                                }
+                            }
+                            $questionAnswer = "chossed-".$indexPage;
+                            echo "<input type='hidden' id='collector-questions' name=".$questionAnswer.">";
+                            $indexPage++;
+                            echo "<input type='hidden' id='indexPage' value=".$indexPage." name='indexPage'>
+                            ";
+                    ?>
+                <?php include "includes/footer.php"; ?>
             </form>
-            <?php include "includes/footer.php"; ?>
         </div>
     </main>
      <!-- BOOTSTRAP SCRIPT -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/validation.js"></script>
 </body>
 </html>
