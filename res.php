@@ -1,3 +1,4 @@
+<!-- WENN SIE DIE LOGISCHER TEIL WERSTEHEN WOLLEN, WECHSELN BITTE DIE "ACTION: (URL IN INDEX.PHP)" -->
 <?php
     include "includes/db.php";
     include "includes/tools.php";

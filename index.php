@@ -1,7 +1,6 @@
 <?php
 include "includes/db.php";
 session_start();
-//session_destroy();
 $_SESSION = array('score' => 0);
 ?>
 
@@ -44,34 +43,10 @@ $_SESSION = array('score' => 0);
                       </label>
                       <input type="radio" name="theme" id="theme" value="science">
                   </li>
-                  <!-- <li class="cont-option">
-                      <label class="dropdown-item-light" for="geography" >Geography
-                        <img src="media/icons/geography.png" alt="option" class="option-img">
-                      </label>
-                      <input type="radio" name="theme" id="geography" value="geography">
-                  </li>
-                  <li class="cont-option">
-                      <label class="dropdown-item-light" for="logic" >Basic Logic
-                        <img src="media/icons/critical-thinking.png" alt="option" class="option-img">
-                      </label>
-                      <input type="radio" name="theme" id="logic" value="logic">
-                  </li>
-                  <li class="cont-option">
-                      <label class="dropdown-item-light" for="css" >CSS (Web Dev.)
-                        <img src="media/icons/web-design.png" alt="option" class="option-img">
-                      </label>
-                      <input type="radio" name="theme" id="css" value="CSS">
-                  </li>
-                  <li class="cont-option">
-                      <label class="dropdown-item-light" for="js" >Javascript (Web Dev.)
-                        <img src="media/icons/Javascript.png" alt="option" class="option-img">
-                      </label>
-                      <input type="radio" name="theme" id="js" value="javascript">
-                  </li> -->
                 </ul>
               </div>
                 <label>Number of Questions:</label><br>
-                <input type="number" name="limit" id="number" class="number" min="0" max="10" required value="5">
+                <input type="number" name="limit" id="number" class="number" min="0" max="10" required>
                 <input type="hidden" name="indexPage" value= "1">
                 <input type="hidden" name="answer" value= "0">
                 <?php include "includes/footer.php"; ?>

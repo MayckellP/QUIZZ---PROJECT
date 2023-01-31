@@ -1,13 +1,8 @@
 <?php
+session_start();
 include "includes/db.php";
 include "includes/tools.php";
-session_start();
-$indexPage = $_POST['indexPage'];
-$_SESSION += $_POST;
-showQuestion($indexPage);
-$correctAnswer = $question['correct']; 
-$score = $_POST['answer'];
-$_SESSION['score'] += $score;
+include "includes/data-collector.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
