@@ -20,11 +20,14 @@ $_SESSION = array('score' => 0);
   </head>
   <body>
   <header>
+    <!-- -------------------------------------------------------------------------------START NAVBAR --> 
     <div class="cont-nav">
     <?php include "includes/navbar.php";?>
     </div>
   </header>
+  <!-- -------------------------------------------------------------------------------BACKGROUND VECTOR --> 
     <div class="trasfondo">
+      <!-- --------------------------------------------------------------CONTAINER BODY --> 
       <div class="fondo">
         <img src="media/images/fondo_Home.svg" alt="fondo_1" class="fondo1">
         <h1>ZH - QUIZZ</h1>
@@ -49,6 +52,8 @@ $_SESSION = array('score' => 0);
                 <input type="number" name="limit" id="number" class="number" min="0" max="10" required>
                 <input type="hidden" name="indexPage" value= "1">
                 <input type="hidden" name="answer" value= "0">
+
+                <!-- -------------------------------------------------------------------------------START BUTTON (FOOTER) --> 
                 <?php include "includes/footer.php"; ?>
           </form>
           <img src="media/images/question_Home.svg" alt="question_Home" class="img-question">

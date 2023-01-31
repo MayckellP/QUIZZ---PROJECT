@@ -1,4 +1,5 @@
 <?php
+/* -------------------------------------------------------------------------------START INCLUDES */ 
 session_start();
 include "includes/db.php";
 include "includes/tools.php";
@@ -19,10 +20,12 @@ include "includes/data-collector.php";
 </head>
 <body>
     <header>
+    <!-- -------------------------------------------------------------------------------START NAVBAR -->
     <?php include "includes/navbar.php"; ?>
     </header>
     <main class="result-header">
         <div class="result-title">
+        <!-- -------------------------------------------------------------------------------CONDITION FOR SCORE WITH IMG --> 
             <h3>You have obtained a score of: </h3>
             <?php
             $sum = $_SESSION['score'] / $_SESSION['limit'];
@@ -43,6 +46,7 @@ include "includes/data-collector.php";
     </main>
     <div class="result-table">
         <h2 class="text-thanks">Thank you for answering this Quiz.</h2>
+        <!-- -------------------------------------------------------------------------------START TABLE RESULT -->
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -62,6 +66,7 @@ include "includes/data-collector.php";
                         </thead>
                         <tbody>
                           <?php
+                          /*-------------------------------------------------------------------------------LOOP FOR THE RESULT */
                             for($i = 1; $i <= $_SESSION['limit']; $i++){
                               showQuestion($i);
                               $index = "chossed-".$i;
@@ -81,6 +86,7 @@ include "includes/data-collector.php";
             </div>
         </div>
     </div>
+    <!-- -------------------------------------------------------------------------------START BUTTONS (FOOTER) -->
     <?php include "includes/footer.php"; ?>
     <!-- BOOTSTRAP SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

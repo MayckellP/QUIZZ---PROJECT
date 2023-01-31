@@ -14,6 +14,6 @@
         $row = $show->fetch(PDO::FETCH_ASSOC);
         $GLOBALS['question'] = $row; 
     }
-    //showTable();
+
 
 ?>

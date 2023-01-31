@@ -1,4 +1,5 @@
 <?php
+/*-------------------------------------------------------------------------------START INCLUDES -- */ 
 session_start();
 include "includes/db.php";
 include "includes/tools.php";
@@ -20,9 +21,11 @@ include "includes/data-collector.php";
 </head>
 <body>
     <header>
+        <!-- -------------------------------------------------------------------------------START NAVBAR --> 
         <?php include "includes/navbar.php";?>
     </header>
     <main class="cont-general">
+        <!-- -------------------------------------------------------------------------------START SLIDER REGISTER --> 
         <div class="register-slider">
             <img src="media/icons/scientist.png" alt="scienceOption" class="register-img">
             <div class="cont-tl">
@@ -35,7 +38,8 @@ include "includes/data-collector.php";
                 ?>
             </div>
         </div>
-        <div class="form-main">   
+        <div class="form-main"> 
+            <!-- -------------------------------------------------------------------------------START QUESTIONS -->   
                 <?php 
                     echo "<h2 class='question'>-".$question['question_text']."</h2>";
                     $page = "";
@@ -71,6 +75,7 @@ include "includes/data-collector.php";
                             ";
                     ?>
                     <p id="camp-validate"><p>
+                        <!-- -------------------------------------------------------------------------------START BUTTON (FOOTER) --> 
                 <?php include "includes/footer.php"; ?>
             </form>
         </div>
