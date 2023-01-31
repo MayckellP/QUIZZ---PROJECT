@@ -1,6 +1,6 @@
 # ZH ACADEMY - QUIZZ
 
-Kleine Quizz über "The Science". Das Project hat: index-page, questions-pages und result-page.
+Kleine Quiz über "The Science". Das Project hat: index-page, questions-pages und result-page.
 wie ein Quiz ist und nicht eine Umfrage, finde ich besser, dass die Navigation hat: Button (Go Home) / Button (Nächste Frage).
 
 [Link-Repository](https://github.com/MayckellP/QUIZZ---PROJECT).  
