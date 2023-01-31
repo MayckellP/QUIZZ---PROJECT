@@ -19,6 +19,7 @@ $_SESSION['score'] += $score;
     <link rel="shortcut icon" href="media/images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css ">
     <link rel="stylesheet" href="style/resultPage.css">
+    <link rel="shortcut icon" href="media/images/newLogo.svg" type="image/x-icon">
     <title>ZH | Result</title>
 </head>
 <body>
@@ -33,11 +34,17 @@ $_SESSION['score'] += $score;
             $resTotal = $sum * 10;
             $resTotal = round($resTotal, 2); 
             echo "<h2> $resTotal / 10</h2>";
-            ?>
-        </div>
-        <div class="result-img">
-        <img src="media/images/normal_Result.svg" alt="result">
-        </div>
+        echo "</div>
+        <div class='result-img'>";
+        if($resTotal < 7){
+          echo "<img src='media/images/bad_Result.svg' alt='result'>";
+        } elseif($resTotal <= 8){
+          echo "<img src='media/images/normal_Result.svg' alt='result'>";
+        } elseif($resTotal > 8){
+          echo "<img src='media/images/good_Result.svg' alt='result'>";
+        }
+        echo "</div>";
+        ?>
     </main>
     <div class="result-table">
         <h2 class="text-thanks">Thank you for answering this Quiz.</h2>

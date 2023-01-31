@@ -16,6 +16,7 @@ $_SESSION = array('score' => 0);
     <link rel="shortcut icon" href="media/images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css ">
     <link rel="stylesheet" href="style/index.css">
+    <link rel="shortcut icon" href="media/images/newLogo.svg" type="image/x-icon">
     <title>ZH | Home</title>
   </head>
   <body>
@@ -43,7 +44,7 @@ $_SESSION = array('score' => 0);
                       </label>
                       <input type="radio" name="theme" id="theme" value="science">
                   </li>
-                  <li class="cont-option">
+                  <!-- <li class="cont-option">
                       <label class="dropdown-item-light" for="geography" >Geography
                         <img src="media/icons/geography.png" alt="option" class="option-img">
                       </label>
@@ -66,11 +67,11 @@ $_SESSION = array('score' => 0);
                         <img src="media/icons/Javascript.png" alt="option" class="option-img">
                       </label>
                       <input type="radio" name="theme" id="js" value="javascript">
-                  </li>
+                  </li> -->
                 </ul>
               </div>
                 <label>Number of Questions:</label><br>
-                <input type="number" name="limit" id="number" class="number" min="0" max="10">
+                <input type="number" name="limit" id="number" class="number" min="0" max="10" required value="5">
                 <input type="hidden" name="indexPage" value= "1">
                 <input type="hidden" name="answer" value= "0">
                 <?php include "includes/footer.php"; ?>
@@ -79,8 +80,8 @@ $_SESSION = array('score' => 0);
       </div>
     </div>
     
-    
     <!-- BOOTSTRAP SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/validation.js"></script>
   </body>
 </html>

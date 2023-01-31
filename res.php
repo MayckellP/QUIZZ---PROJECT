@@ -57,10 +57,8 @@
                     }
                     echo "<div class='option'>
                     <input type='radio' id=".$answer." class='check-input' name='answer' value=".$value.">
-                        <label class='check-answer' for=".$answer.">
-                        ".$question[$answer]."
-                        </label>
-                        
+                        <label class='check-answer' for=".$answer.">".$question[$answer]."</label>
+                    <input type='checkbox' id=".$answer." class='check-input' name='answer'hidden>    
                     </div>";
                 }
             }

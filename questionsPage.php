@@ -24,7 +24,8 @@ $_SESSION['score'] += $score;
     <link rel="shortcut icon" href="media/images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css ">
     <link rel="stylesheet" href="style/questionsPage.css">
-    <title>ZH | Question 1</title>
+    <link rel="shortcut icon" href="media/images/newLogo.svg" type="image/x-icon">
+    <title>ZH | Question <?php echo $indexPage;?></title>
 </head>
 <body>
     <header>
@@ -78,6 +79,7 @@ $_SESSION['score'] += $score;
                             echo "<input type='hidden' id='indexPage' value=".$indexPage." name='indexPage'>
                             ";
                     ?>
+                    <p id="camp-validate"><p>
                 <?php include "includes/footer.php"; ?>
             </form>
         </div>
