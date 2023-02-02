@@ -74,7 +74,7 @@ include "includes/data-collector.php";
         <div class="form-main"> 
             <!-- -------------------------------------------------------------------------------START QUESTIONS -->   
                 <?php 
-                    echo "<h2 class='question' >-".$question['question_text']."</h2>";
+                    echo "<h2 class='question'>-".$question['question_text']."</h2>";
                     $page = "";
                     if($indexPage < $newLimit){
                         $page = "questionsPage.php";
@@ -82,7 +82,7 @@ include "includes/data-collector.php";
                         $page = "resultPage.php";
                     }
                     echo 
-                    "<form action=".$page." method='POST' onsubmit='return choosed();'>";
+                    "<form action=".$page." method='POST' onsubmit='return choosed();' style='margin-top: 5%;'>";
                             $option = 0;
                             for($i=1; $i <= 5; $i++){
                                 $answer = "answer-".$i;

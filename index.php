@@ -35,8 +35,8 @@ $_SESSION = array('score' => 0, 'indexPage' => 0);
       <div class="startForm">
           <form action="questionsPage.php" method="POST">
               <label>Choose your Theme:</label>
-                <select  class="form-select" aria-label="Default select example" id="topic" name="topic">
-                    <option value="music">Music</option>
+                <select class="dropdown" id="topic" name="topic">
+                    <option value="music" >Music</option>
                     <option value="ch-norris">Chuck Norris</option>
                     <option value="animals">Animals</option>
                     <option value="movies">Movies</option>
