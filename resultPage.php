@@ -21,13 +21,18 @@ include "includes/data-collector.php";
 <body>
     <header>
     <!-- -------------------------------------------------------------------------------START NAVBAR -->
-    <?php include "includes/navbar.php"; ?>
+    <?php
+    include
+    "includes/navbar.php"; ?>
     </header>
     <main class="result-header">
         <div class="result-title">
         <!-- -------------------------------------------------------------------------------CONDITION FOR SCORE WITH IMG --> 
             <h3>You have obtained a score of: </h3>
             <?php
+            
+              //$newLimits = $_SESSION['limit'] + $_SESSION['indexPage'];
+          
             $sum = $_SESSION['score'] / $_SESSION['limit'];
             $resTotal = $sum * 10;
             $resTotal = round($resTotal, 2); 
@@ -67,7 +72,7 @@ include "includes/data-collector.php";
                         <tbody>
                           <?php
                           /*-------------------------------------------------------------------------------LOOP FOR THE RESULT */
-                            for($i = 1; $i <= $_SESSION['limit']; $i++){
+                            for($i = $_SESSION['indexPage']; $i <= $newLimit; $i++){
                               showQuestion($i);
                               $index = "chossed-".$i;
                               echo

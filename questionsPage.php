@@ -22,18 +22,51 @@ include "includes/data-collector.php";
 <body>
     <header>
         <!-- -------------------------------------------------------------------------------START NAVBAR --> 
-        <?php include "includes/navbar.php";?>
+        <?php
+        /* echo "SESSION: ";
+        prettyPrint($_SESSION);
+
+        echo "<br>POST: ";
+        prettyPrint($_POST); */
+        include "includes/navbar.php";?>
     </header>
     <main class="cont-general">
         <!-- -------------------------------------------------------------------------------START SLIDER REGISTER --> 
         <div class="register-slider">
-            <img src="media/icons/scientist.png" alt="scienceOption" class="register-img">
-            <div class="cont-tl">
-                <h2 class="title">Science</h2><br>
-                <h3 class="count">Question:</h3>
-                <?php echo 
+            <?php
+                if($topic == "music"){
+                    echo "<img src='media/images/music.svg' alt='music' class='register-img'>";
+                } else if($topic == "ch-norris"){
+                    echo "<img src='media/images/question_Home.svg' alt='music' class='register-img'>";
+                } else if($topic == "animals"){
+                    echo "<img src='media/images/animals.svg' alt='music' class='register-img'>";
+                } else if($topic == "movies"){
+                    echo "<img src='media/images/movie.svg' alt='music' class='register-img'>";
+                } else if($topic == "d-n-d"){
+                    echo "<img src='media/images/question_Home.svg' alt='music' class='register-img'>";
+                } else if($topic == "astronautics"){
+                    echo "<img src='media/images/astro.svg' alt='music' class='register-img'>";
+                } else if($topic == "geography"){
+                    echo "<img src='media/images/music.svg' alt='music' class='register-img'>";
+                } else if($topic == "science"){
+                    echo "<img src='media/images/science.svg' alt='music' class='register-img'>";
+                } else if($topic == "informatics"){
+                    echo "<img src='media/images/informatic.svg' alt='music' class='register-img'>";
+                } else if($topic == "gen-knowledge"){
+                    echo "<img src='media/images/knowledge.svg' alt='music' class='register-img'>";
+                }
+                echo "<div class='cont-tl'>
+                 <h2 class='title'>";
+                 if($topic == "astronautics"){
+                    $newTopic = "astro"; 
+                 }
+                 else $newTopic = $topic;
+                 echo $newTopic;
+                 echo "</h2><br>
+                <h3 class='count'>Question:</h3>";
+                echo 
                 "<h3 class='count'>"
-                .$_POST['indexPage']." / ".$_SESSION['limit']. 
+                .$indexPage." / ".$newLimit. 
                 "</h3>";
                 ?>
             </div>
@@ -41,9 +74,9 @@ include "includes/data-collector.php";
         <div class="form-main"> 
             <!-- -------------------------------------------------------------------------------START QUESTIONS -->   
                 <?php 
-                    echo "<h2 class='question'>-".$question['question_text']."</h2>";
+                    echo "<h2 class='question' >-".$question['question_text']."</h2>";
                     $page = "";
-                    if($_POST['indexPage'] < $_SESSION['limit']){
+                    if($indexPage < $newLimit){
                         $page = "questionsPage.php";
                     } else{
                         $page = "resultPage.php";
@@ -53,7 +86,7 @@ include "includes/data-collector.php";
                             $option = 0;
                             for($i=1; $i <= 5; $i++){
                                 $answer = "answer-".$i;
-                                if(isset($question[$answer])){
+                                if($question[$answer] !== ''){
                                     if($correctAnswer === $answer){ 
                                         $value = 1;
                                         $option = $i;
@@ -69,8 +102,8 @@ include "includes/data-collector.php";
                                 }
                             }
                             $questionAnswer = "chossed-".$indexPage;
+                            $_POST['indexPage'] = $indexPage++;
                             echo "<input type='hidden' id='collector-questions' name=".$questionAnswer.">";
-                            $indexPage++;
                             echo "<input type='hidden' id='indexPage' value=".$indexPage." name='indexPage'>
                             ";
                     ?>

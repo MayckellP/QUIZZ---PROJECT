@@ -14,6 +14,12 @@
         $row = $show->fetch(PDO::FETCH_ASSOC);
         $GLOBALS['question'] = $row; 
     }
+    //SHOW DATABANKEN 
+    function showTopic($topic){
+        $show = $GLOBALS['dbConection']->query("SELECT * FROM `questions` WHERE `topic` = '$topic'");
+        $row = $show->fetch(PDO::FETCH_ASSOC);
+        $GLOBALS['topicQuestion'] = $row; 
+    }
 
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 include "includes/db.php";
 session_start();
-$_SESSION = array('score' => 0);
+$_SESSION = array('score' => 0, 'indexPage' => 0);
 ?>
 
 <!DOCTYPE html>
@@ -35,24 +35,25 @@ $_SESSION = array('score' => 0);
       <div class="startForm">
           <form action="questionsPage.php" method="POST">
               <label>Choose your Theme:</label>
-              <div class="dropdown">
-                <button class="btn dropdown-toggle w-100 bg-white text-dark fs-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Select your Option
-                </button>
-                <ul class="dropdown-menu">
-                  <li class="cont-option">
-                      <label class="dropdown-item-light" for="theme" >Science
-                        <img src="media/icons/scientist.png" alt="option" class="option-img">
-                      </label>
-                      <input type="radio" name="theme" id="theme" value="science">
-                  </li>
-                </ul>
-              </div>
+                <select  class="form-select" aria-label="Default select example" id="topic" name="topic">
+                    <option value="music">Music</option>
+                    <option value="ch-norris">Chuck Norris</option>
+                    <option value="animals">Animals</option>
+                    <option value="movies">Movies</option>
+                    <option value="d-n-d">Dungeons-n-Dragons</option>
+                    <option value="astronautics">Astronautics</option>
+                    <!-- <option value="technology">Technology</option> -->
+                    <!-- <option value="ai">Artificial Intelligence</option> -->
+                    <option value="geography">Geography</option>
+                    <!-- <option value="sports">Sports</option> -->
+                    <option value="science">Science</option>
+                    <option value="informatics">Informatics</option>
+                    <option value="gen-knowledge">General Knowledge</option>
+                </select>
                 <label>Number of Questions:</label><br>
-                <input type="number" name="limit" id="number" class="number" min="0" max="10" required>
-                <input type="hidden" name="indexPage" value= "1">
+                <input type="number" name="limit" id="number" class="number" min="1" max="10" required>
+                <!-- <input type="hidden" name="indexPage" value= "1001"> -->
                 <input type="hidden" name="answer" value= "0">
-
                 <!-- -------------------------------------------------------------------------------START BUTTON (FOOTER) --> 
                 <?php include "includes/footer.php"; ?>
           </form>

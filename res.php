@@ -1,8 +1,10 @@
 <!-- WENN SIE DIE LOGISCHER TEIL WERSTEHEN WOLLEN, WECHSELN BITTE DIE "ACTION: (URL IN INDEX.PHP)" -->
 <?php
-    include "includes/db.php";
-    include "includes/tools.php";
-    session_start();
+session_start();
+include "includes/db.php";
+include "includes/tools.php";
+include "includes/data-collector.php";
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
